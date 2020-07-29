@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vodafone Sim Activation</title>
+
+    <!-- Stylesheet -->
+    <link href="maincss.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+         var available_voices;
+
+		// list of languages is probably not loaded, wait for it
+		if(window.speechSynthesis.getVoices().length == 0) {
+		  window.speechSynthesis.addEventListener('voiceschanged', function() {
+			available_voices = window.speechSynthesis.getVoices();
+			console.log(available_voices)
+		  });
+		}
+		else {
+		  available_voices = window.speechSynthesis.getVoices();
+		  }
+    </script>
+	
+  	<!-- v2 -->
+    <script src='https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js'></script>
+	
+	  <script src="main.js"></script>
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <link rel="canonical" href="startup-horizontal-half.html">
+
+
+</head>
+
+  <body>
+
+    <div class="ai full-height fh">
+
+      <div class="bz">
+        <img src="vodafone.jpg" alt="">
+      </div>
+
+      <div class="phone-preview-sizer">
+        <div id="guide" class="phone-preview"></div>
+      </div>
+
+      <div class="horizontal-half-wrapper he g">
+
+        <div class="header-background l"></div>
+
+        <div class="header-wrapper c valign-wrapper">
+          <div class="d iv kw offset-m2 ci">
+		  
+          
+            <a id="start" class="waves-effect waves-red btn-large">Lets Start</a>
+
+
+            <div style="display: none;" id="aadharUI">
+
+              <div id="uploadStage">
+              <p style="font-size: 2em">Click the button to upload your aadhar card</p>
+              <br></br>
+              <a id="camera" class="waves-effect waves-red btn-large">Upload Aadhar Card</a>
+              <input type="file" id="uploadfile" name="image" accept="image/*" capture style="display:none"/>
+              </div>
+
+              <div id="loader" style="display: none;">
+
+                  <p style="font-size: 2em">Scanning for data</p>
+                  <br></br>
+                  <img src="speaking.gif" style="width: 50%" alt="">
+              </div>
+			
+              <div style="font-size: 1em; display: none;"  id="showtoken">Your Token Number is : VI100XX</div>
+              <br></br>
+              <div style="font-size: 1em" id="result"></div>
+              <br></br>
+              <div  style="font-size: 2em; letter-spacing: 3px;" id="aadharnumber"></div>
+              <br></br>
+              <div id="tokenStage" style="display: none;"> <a id="token" class="waves-effect waves-red btn-large">Generate Token</a> </div>
+
+
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!-- Scripts -->
+    <script src="jquery.min.js"></script>
+    <script src="materialize.min.js"></script>
+
+  </body>
+
+</html>
